@@ -137,6 +137,9 @@ body {
     height: 60px;
     cursor: pointer;
 }
+.search button:hover{
+    background-color: #e74c3c; /* New button color on hover */
+}
 .search button img{
     width: 20px;
 }
