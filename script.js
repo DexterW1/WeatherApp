@@ -50,7 +50,7 @@ async function checkWeather(geolocation){
         updateCity.innerHTML=data.name;
         updateTemp.innerHTML=Math.round(data.main.temp) + '&degf';
         updateHumidity.innerHTML=data.main.humidity +"%";
-        updateWind.innerHTML=data.wind.speed + " mpg";
+        updateWind.innerHTML=data.wind.speed + " mph";
         if(data.weather[0].main=="Clouds"){
             updateWeatherIcon.src="images/clouds.png";
         }
