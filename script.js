@@ -38,13 +38,13 @@ myLocationButton.addEventListener('click', async () => {
 
 async function checkWeather(geolocation){
     console.log(geolocation);
-    if(geolocation==true){
-        var currentWeatherUrl= `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`
-    }
-    else{
-        var currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userSearchInput}&appid=${apiKey}&units=imperial`;
-    }
     try {
+        if(geolocation==true){
+            var currentWeatherUrl= `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`
+        }
+        else{
+            var currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userSearchInput}&appid=${apiKey}&units=imperial`;
+        }
         const response = await fetch(currentWeatherUrl);
         const data = await response.json();
         updateCity.innerHTML=data.name;
