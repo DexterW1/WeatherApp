@@ -187,10 +187,15 @@ body {
     font-size: 28px;
     margin-top: -6px;
 }
+.weather{
+    /* border: 2px solid pink; */
+    height: auto;
+}
 
 @media screen and (max-width: 550px) {
     .card{
         width: 90vw;
+        height: 70vh;
         /* border: 2px solid black; */
     }
     .search{
@@ -203,6 +208,9 @@ body {
     .col{
         margin: 0 10px;
         /* border: 2px solid black; */
+    }
+    .details{
+        /* border: 2px solid red; */
     }
     .col .wind{
         font-size: 20px;
