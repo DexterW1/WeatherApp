@@ -1,5 +1,7 @@
 const apiKey = '0b36dbb17bfa775ceb8149f2441436db';
 let userSearchInput = '';
+let countryCode='';
+let stateCode='';
 let lon;
 let lat;
 const searchField= document.querySelector('.searchField');
@@ -37,13 +39,18 @@ myLocationButton.addEventListener('click', async () => {
 });
 
 async function checkWeather(geolocation){
-    console.log(geolocation);
     try {
         if(geolocation==true){
             var currentWeatherUrl= `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`
         }
         else{
             var currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userSearchInput}&appid=${apiKey}&units=imperial`;
+            console.log(userSearchInput);
+        }
+        if(userSearchInput.includes(',')){
+            console.log("did enter userinput");
+            [userSearchInput,stateCode,countryCode]=userSearchInput.split(',');
+            var currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userSearchInput},${stateCode},${countryCode}&appid=${apiKey}&units=imperial`;
         }
         const response = await fetch(currentWeatherUrl);
         const data = await response.json();
