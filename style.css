@@ -187,3 +187,38 @@ body {
     font-size: 28px;
     margin-top: -6px;
 }
+
+@media screen and (max-width: 550px) {
+    .card{
+        width: 90vw;
+        /* border: 2px solid black; */
+    }
+    .search{
+        /* border: 2px solid black; */
+    }
+    .search input{
+        width: 50px;
+        /* border: 2px solid black; */
+    }
+    .col{
+        margin: 0 10px;
+        /* border: 2px solid black; */
+    }
+    .col .wind{
+        font-size: 20px;
+    }
+    .col .humidity{
+        font-size: 20px;
+    }
+    .weather h1{
+        font-size: 50px;
+        font-weight: 500;
+        /* border: 2px solid black; */
+    }
+    .weather h2{
+        font-size: 40px;
+        font-weight: 400;
+        margin-top: -10px;
+        /* border: 2px solid black; */
+    }
+}
